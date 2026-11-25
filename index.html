@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Итоговый конспект №8 · Багрянцева</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#hero" class="brand">
+      <div class="brand-mark">WEB</div>
+      <div class="brand-text">
+        <b>FRONTEND COURSE</b>
+        <span>Итоги семестра · 9 лекций</span>
+      </div>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="Открыть меню">
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#lectures">Все лекции</a>
+      <a href="#internet">Интернет</a>
+      <a href="#data">API и Ошибки</a>
+      <a href="#frameworks">Компоненты</a>
+      <a href="#map">Карьера</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#quiz" class="nav-cta">Итоговый тест</a>
+    </nav>
+    <div class="progress-line" id="progressLine"></div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Конспект семестра · Модули 01–09</div>
+          <h1>Весь путь во <span class="grad-text">фронтенде</span> за один семестр</h1>
+          <p class="lead">
+            Краткая выжимка всех пройденных тем: от базовых тегов HTML, семантики и доступности до компонентного подхода, асинхронных запросов fetch, работы с Git и публикации сайта в интернет.
+          </p>
+          <div class="hero-actions">
+            <a href="#lectures" class="btn btn-primary">Открыть лекции →</a>
+            <a href="#quiz" class="btn btn-ghost">Пройти тест семестра</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><b>9</b><span>лекций за семестр</span></div>
+            <div class="stat"><b>3</b><span>проекта в портфолио</span></div>
+            <div class="stat"><b>15</b><span>вопросов в тесте</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="hero-card">
+            <div class="terminal">
+              <div class="terminal-bar">
+                <span class="dot r"></span>
+                <span class="dot a"></span>
+                <span class="dot g"></span>
+                <span class="terminal-title">semester-summary.js</span>
+              </div>
+              <div class="terminal-body">
+                <div class="tline"><span class="tc">// Итоги пройденного курса</span></div>
+                <div class="tline"><span class="tk">const</span> <span class="tf">semester</span> = {</div>
+                <div class="tline">&nbsp;&nbsp;base: [<span class="ts">'HTML5'</span>, <span class="ts">'CSS3'</span>, <span class="ts">'JS ES6+'</span>],</div>
+                <div class="tline">&nbsp;&nbsp;skills: [<span class="ts">'A11y'</span>, <span class="ts">'Fetch/JSON'</span>, <span class="ts">'Git'</span>],</div>
+                <div class="tline">&nbsp;&nbsp;deploy: <span class="ts">'GitHub Pages / Netlify'</span>,</div>
+                <div class="tline">&nbsp;&nbsp;status: <span class="ts">'Готов к реальным проектам'</span></div>
+                <div class="tline">}; <span class="cursor"></span></div>
+              </div>
+            </div>
+            <div class="hero-note">
+              <b>Главный принцип:</b>
+              <span>разделение ответственности — HTML отвечает за структуру, CSS за внешний вид, а JavaScript за поведение и данные.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lectures" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">База знаний · Лекции 01–09</div>
+          <h2>Краткий конспект всех лекций семестра</h2>
+          <p class="lead">Выберите нужную лекцию слева, чтобы открыть ключевые тезисы, правила и готовые шпаргалки с кодом.</p>
+        </div>
+
+        <div class="spec-layout">
+          <div class="spec-list" id="lectureList" role="tablist"></div>
+          <div class="card spec-detail" id="lectureDetail"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="internet" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">От кабеля до пикселя</div>
+          <h2>Как браузер загружает и рисует страницу</h2>
+          <p class="lead">Кликните по этапам, чтобы вспомнить путь HTTP-запроса и процесс построения DOM и CSSOM.</p>
+        </div>
+
+        <div class="flow" id="netFlow" role="tablist"></div>
+        <div class="flow-detail" id="netDetail"></div>
+
+        <div class="grid-3" style="margin-top: 22px;">
+          <div class="card hoverable">
+            <span class="badge cyan">Доступность (A11y)</span>
+            <h3 style="margin-top: 10px;">Семантика и ARIA</h3>
+            <p style="color:var(--muted); font-size: .9rem; margin-top: 6px;">Используйте <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;button&gt;</code>, осмысленный <code>alt</code> для картинок и атрибуты <code>aria-expanded</code>, <code>aria-label</code> для скринридеров.</p>
+          </div>
+          <div class="card hoverable">
+            <span class="badge mag">Рендеринг</span>
+            <h3 style="margin-top: 10px;">Плавные анимации</h3>
+            <p style="color:var(--muted); font-size: .9rem; margin-top: 6px;">Анимируйте только <code>transform</code> и <code>opacity</code> — они не вызывают дорогой пересчёт геометрии (Layout).</p>
+          </div>
+          <div class="card hoverable">
+            <span class="badge lime">Git и Деплой</span>
+            <h3 style="margin-top: 10px;">Публикация в сеть</h3>
+            <p style="color:var(--muted); font-size: .9rem; margin-top: 6px;">Цикл обновления: <code>git add .</code> → <code>git commit -m "..."</code> → <code>git push</code>. Пути к файлам пишем без слеша в начале (<code>css/style.css</code>).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="data" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Работа с сервером</div>
+          <h2>fetch, JSON и две главные ловушки</h2>
+          <p class="lead">Помните: <code>fetch</code> отклоняет промис только при обрыве сети. Статусы 404 и 500 нужно проверять вручную через <code>response.ok</code>.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <span class="badge amber">Правила JSON</span>
+            <h3 style="margin-top: 10px;">Общий язык клиента и сервера</h3>
+            <ul style="color:var(--muted); font-size: .9rem; margin: 12px 0 0 18px; line-height: 1.8;">
+              <li>Ключи и строки — <b>только в двойных кавычках</b>.</li>
+              <li>Числа, <code>true</code>, <code>false</code>, <code>null</code> — без кавычек.</li>
+              <li>Запрещены комментарии и запятая после последнего элемента.</li>
+              <li><code>JSON.parse()</code> — из строки в объект, <code>JSON.stringify()</code> — обратно.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="code-panel">
+              <div class="code-head">
+                <span>safeFetch.js · Эталонный шаблон</span>
+                <button type="button" class="copy-btn" data-copy="fetchTemplate">Скопировать</button>
+              </div>
+              <pre id="fetchTemplate">async function loadUser(login) {
+  try {
+    const res = await fetch(`https://api.github.com/users/${login}`);
+    if (!res.ok) throw new Error(`HTTP ошибка: ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error('Сбой загрузки:', err);
+    return null;
+  }
+}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="frameworks" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Компонентный подход</div>
+          <h2>Один компонент — четыре подхода</h2>
+          <p class="lead">Переключайте фреймворки и меняйте параметры кнопки, чтобы увидеть работу состояния и пропсов вживую.</p>
+        </div>
+
+        <div class="lab">
+          <div class="card">
+            <div class="tabs" id="fwTabs" role="tablist"></div>
+            <div class="framework-info" id="fwInfo"></div>
+            <div class="code-panel">
+              <div class="code-head">
+                <span id="codeFile">Button.jsx</span>
+                <button type="button" class="copy-btn" id="copyCode">Скопировать код</button>
+              </div>
+              <pre id="codeOut"></pre>
+            </div>
+          </div>
+
+          <div class="card sandbox">
+            <div class="preview-stage">
+              <button type="button" class="demo-btn" id="demoBtn"></button>
+            </div>
+
+            <div class="controls">
+              <div class="control">
+                <label for="labelInput">Текст кнопки</label>
+                <input type="text" id="labelInput" value="Записаться">
+              </div>
+
+              <div class="control">
+                <label>Счётчик бейджа</label>
+                <div class="stepper">
+                  <button type="button" id="countMinus" aria-label="Уменьшить">−</button>
+                  <output id="countOut">3</output>
+                  <button type="button" id="countPlus" aria-label="Увеличить">+</button>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="variantSelect">Стиль кнопки</label>
+                <select id="variantSelect">
+                  <option value="primary">Primary · градиент</option>
+                  <option value="ghost">Ghost · прозрачная</option>
+                  <option value="danger">Danger · красная</option>
+                  <option value="success">Success · зелёная</option>
+                </select>
+              </div>
+
+              <div class="control">
+                <label for="radiusRange">Скругление · <span id="radiusVal">12</span> px</label>
+                <input type="range" id="radiusRange" min="0" max="30" value="12">
+              </div>
+
+              <div class="control toggle-row">
+                <label for="badgeToggle" style="margin:0;">Показывать бейдж</label>
+                <label class="switch"><input type="checkbox" id="badgeToggle" checked><i></i></label>
+              </div>
+
+              <div class="control toggle-row">
+                <label for="disabledToggle" style="margin:0;">Состояние Disabled</label>
+                <label class="switch"><input type="checkbox" id="disabledToggle"><i></i></label>
+              </div>
+
+              <div class="control-actions">
+                <button type="button" class="mini-btn" id="resetSandbox">Сбросить</button>
+                <button type="button" class="mini-btn accent" id="exportSandbox">Экспорт CSS</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Развитие в профессии</div>
+          <h2>Карьерная лестница фронтендера</h2>
+          <p class="lead">Выберите уровень, чтобы посмотреть зону ответственности и необходимые навыки.</p>
+        </div>
+
+        <div class="ladder" id="ladder" role="tablist"></div>
+
+        <div class="career-detail">
+          <div class="card" id="careerCard"></div>
+          <div class="salary">
+            <h4>Ориентир по рынку</h4>
+            <div class="salary-labels">
+              <span>старт</span>
+              <span>рост</span>
+              <span>экспертиза</span>
+            </div>
+            <div class="salary-band">
+              <div class="salary-marker" id="salaryMarker"></div>
+            </div>
+            <div class="salary-value" id="salaryValue">50–90 тыс. руб.</div>
+            <div class="salary-note">Уровни зависят не от стажа в годах, а от самостоятельности и умения решать сложные задачи.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Мои работы · Практика семестра</div>
+          <h2>Портфолио проектов</h2>
+          <p class="lead">Реализованные за семестр учебные проекты с применением семантики, доступности, JS-компонентов и работы с API.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 24px;">
+          <article class="card hoverable">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span class="badge cyan">Проект 01</span>
+              <span style="font-family:var(--mono); font-size:.75rem; color:var(--dim);">HTML · CSS · A11y</span>
+            </div>
+            <h3>Адаптивный сайт-визитка</h3>
+            <p style="color:var(--muted); font-size:.9rem; margin: 10px 0 16px;">
+              Семантическая вёрстка по стандартам доступности WCAG: правильная иерархия заголовков, контрастные цвета, фокус с клавиатуры и публикация на GitHub Pages.
+            </p>
+            <div class="skill-tags" style="margin: 0 0 16px;">
+              <span class="tag">Semantic HTML</span>
+              <span class="tag">Flexbox / Grid</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+            <a href="#hero" class="mini-btn" style="display:inline-block; text-decoration:none;">Смотреть демо ↑</a>
+          </article>
+
+          <article class="card hoverable">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span class="badge mag">Проект 02</span>
+              <span style="font-family:var(--mono); font-size:.75rem; color:var(--dim);">Vanilla JS · ARIA</span>
+            </div>
+            <h3>Библиотека UI-компонентов</h3>
+            <p style="color:var(--muted); font-size:.9rem; margin: 10px 0 16px;">
+              Мобильное бургер-меню, модальные окна с закрытием по Escape, слайдер и переключаемые вкладки с полной поддержкой скринридеров.
+            </p>
+            <div class="skill-tags" style="margin: 0 0 16px;">
+              <span class="tag">DOM API</span>
+              <span class="tag">aria-expanded</span>
+              <span class="tag">Events</span>
+            </div>
+            <a href="#frameworks" class="mini-btn" style="display:inline-block; text-decoration:none;">Открыть песочницу ↑</a>
+          </article>
+
+          <article class="card hoverable">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span class="badge lime">Проект 03</span>
+              <span style="font-family:var(--mono); font-size:.75rem; color:var(--dim);">Fetch · JSON · API</span>
+            </div>
+            <h3>Виджет данных с GitHub API</h3>
+            <p style="color:var(--muted); font-size:.9rem; margin: 10px 0 16px;">
+              Асинхронная загрузка профилей пользователей и фактов через <code>async/await</code>, обработка сетевых сбоев и HTTP-ошибок 404 через <code>response.ok</code>.
+            </p>
+            <div class="skill-tags" style="margin: 0 0 16px;">
+              <span class="tag">async/await</span>
+              <span class="tag">try / catch</span>
+              <span class="tag">REST API</span>
+            </div>
+            <a href="#data" class="mini-btn" style="display:inline-block; text-decoration:none;">Смотреть код ↑</a>
+          </article>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="idea-box">
+            <span class="badge lime">Генератор идей для пет-проекта</span>
+            <h3 id="ideaTitle">Дашборд привычек с фильтрами</h3>
+            <p id="ideaDesc"></p>
+            <div class="idea-stack" id="ideaStack"></div>
+            <button type="button" class="btn btn-primary" id="newIdea">Следующая идея ↻</button>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom: 14px;">Чек-лист качества проекта</h3>
+            <div class="checklist" id="portfolioChecklist"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="reveal">
+      <div class="wrap">
+        <div class="section-head" style="text-align: center;">
+          <div class="eyebrow">Итоговая проверка</div>
+          <h2>Тест по всем лекциям семестра</h2>
+          <p class="lead" style="margin: 0 auto;">15 вопросов по HTML, CSS, доступности, JS-компонентам, fetch/JSON, обработке ошибок и Git.</p>
+        </div>
+
+        <div class="quiz-shell">
+          <div class="quiz-top">
+            <span class="quiz-count" id="quizCount">Вопрос 1 / 15</span>
+            <div class="quiz-progress"><i id="quizBar"></i></div>
+            <span class="quiz-count" id="quizScore">Верно: 0</span>
+          </div>
+
+          <div class="card quiz-card" id="quizCard"></div>
+
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-ghost" id="quizRestart">Начать заново</button>
+            <button type="button" class="btn btn-primary" id="quizNext" disabled>Следующий вопрос →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <b>FRONTEND COURSE · Итоговый проект за семестр</b>
+        <p style="margin-top: 6px;">Конспект 9 лекций, интерактивные примеры кода, портфолио работ и итоговый тест.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Наверх</a>
+        <a href="#lectures">Лекции</a>
+        <a href="#data">API и Fetch</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#quiz">Тест</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
